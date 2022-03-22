@@ -1,0 +1,15 @@
+db_path: "bot.db"
+
+tg_bot_url: "https://t.me/My_test_go_bot"
+
+messages:
+  responses:
+    reply_start_template: "Привет! Чтобы сохранять ссылки в своем Pocket аккаунте, для начала тебе надо дать мне на это доступ. Для этого переходи по ссылке:\n%s"
+    reply_already_authorized: "Ты уже авторизирован. Присылай ссылку а я ее сохраню."
+    link_saved_successfully: "Ссылка успешно сохранена!"
+  errors:
+    invalid_link: "Это невалидная ссылка!"
+    failed_to_save: "Увы, не удалось сохранить ссылку. попробуй еще раз позже!"
+    unauthorized: "Ты не авторизирован. Используй команду /start"
+    unknown_command: "Неизвестная команда"
+    unknown_error: "Неизвестная ошибка"
