@@ -38,7 +38,7 @@ func main() {
 
 	tgBot := telegram.NewBot(bot, pocketClient, cfg.AuthServerUrl, tokenRepository, cfg.Messages)
 
-	authServer := server.NewAuthServer(pocketClient, tokenRepository, cfg.TgBotUrl)
+	authServer := server.NewAuthServer(pocketClient, tokenRepository, cfg)
 
 	go func() {
 		if err := authServer.Start(); err != nil {

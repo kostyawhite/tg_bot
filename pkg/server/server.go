@@ -2,6 +2,7 @@ package server
 
 import (
 	"fmt"
+	"github.com/kostyawhite/telegram-bot/pkg/config"
 	"github.com/kostyawhite/telegram-bot/pkg/repository"
 	"github.com/zhashkevych/go-pocket-sdk"
 	"net/http"
@@ -12,11 +13,12 @@ type AuthServer struct {
 	server          *http.Server
 	pocketClient    *pocket.Client
 	tokenRepository repository.TokenRepository
+	cfg             *config.Config
 	tgBotUrl        string
 }
 
-func NewAuthServer(pocketClient *pocket.Client, tokenRepository repository.TokenRepository, tgBotUrl string) *AuthServer {
-	return &AuthServer{pocketClient: pocketClient, tokenRepository: tokenRepository, tgBotUrl: tgBotUrl}
+func NewAuthServer(pocketClient *pocket.Client, tokenRepository repository.TokenRepository, cfg *config.Config) *AuthServer {
+	return &AuthServer{pocketClient: pocketClient, tokenRepository: tokenRepository, tgBotUrl: cfg.TgBotUrl}
 }
 
 func (as *AuthServer) Start() error {
